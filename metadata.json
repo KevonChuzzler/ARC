@@ -1,0 +1,8 @@
+{
+  "name": "African Restoration Centre (ARC)",
+  "description": "Reconnecting communities with African heritage, cultural development, and learning through restoration programs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
