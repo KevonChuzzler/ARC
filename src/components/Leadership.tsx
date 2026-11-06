@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, BookOpen, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Leadership() {
   const leaders = [
@@ -33,7 +34,14 @@ export default function Leadership() {
   ];
 
   return (
-    <section id="leadership" className="py-20 lg:py-28 bg-[#F4EAE1]/40 border-t border-[#2F3E36]/10">
+    <motion.section 
+      id="leadership" 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-[#F4EAE1]/40 border-t border-[#2F3E36]/10"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -49,13 +57,17 @@ export default function Leadership() {
           </p>
         </div>
 
-        {/* 3 Team Profile Grid */}
+        {/* 3 Team Profile Grid with Staggered Entrance */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {leaders.map((leader) => {
+          {leaders.map((leader, index) => {
             const Icon = leader.icon;
             return (
-              <div
+              <motion.div
                 key={leader.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
                 className="p-8 rounded-2xl bg-white border border-[#2F3E36]/10 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
               >
                 <div className="space-y-6">
@@ -94,12 +106,12 @@ export default function Leadership() {
                   <span className="w-2 h-2 rounded-full bg-[#F3A83B]" />
                 </div>
 
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

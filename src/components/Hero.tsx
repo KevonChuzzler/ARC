@@ -1,9 +1,15 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Compass } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-[#FBF9F5]">
+    <motion.section 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-[#FBF9F5]"
+    >
       {/* Soft warm sun background accent */}
       <div 
         aria-hidden="true" 
@@ -14,13 +20,12 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Text & CTAs */}
-          <div className="lg:col-span-7 space-y-8">
-            
-            {/* Tagline kicker */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F4EAE1] border border-[#2F3E36]/10 text-xs font-semibold text-[#2F3E36] tracking-wider uppercase">
-              <Compass className="w-3.5 h-3.5 text-[#C86452]" />
-              <span>People · Roots · Restoration</span>
-            </div>
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-8"
+          >
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#2F3E36] leading-[1.15] text-balance">
@@ -67,10 +72,15 @@ export default function Hero() {
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: High-Res Image Banner Showcase */}
-          <div className="lg:col-span-5 relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 relative"
+          >
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Background Terracotta Frame */}
@@ -108,10 +118,10 @@ export default function Hero() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

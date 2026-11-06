@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, HeartHandshake, Laptop, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Programmes() {
   const services = [
@@ -48,7 +49,14 @@ export default function Programmes() {
   ];
 
   return (
-    <section id="programmes" className="py-20 lg:py-28 bg-[#FBF9F5]">
+    <motion.section 
+      id="programmes" 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-[#FBF9F5]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -64,13 +72,17 @@ export default function Programmes() {
           </p>
         </div>
 
-        {/* 3 Identically Sized CSS Grid Cards */}
+        {/* 3 Identically Sized CSS Grid Cards with Staggered Entrance */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div
+              <motion.div
                 key={service.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
                 className="group flex flex-col justify-between rounded-2xl bg-white border border-[#2F3E36]/12 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
@@ -132,12 +144,12 @@ export default function Programmes() {
                   </a>
                 </div>
 
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

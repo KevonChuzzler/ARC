@@ -1,5 +1,6 @@
 import React from 'react';
-import { Users, Trees, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Users, Trees, RefreshCw } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const pillars = [
@@ -21,7 +22,14 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 lg:py-28 bg-[#F4EAE1]/60 border-y border-[#2F3E36]/10">
+    <motion.section 
+      id="about" 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-[#F4EAE1]/60 border-y border-[#2F3E36]/10"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -55,11 +63,15 @@ export default function About() {
               </h3>
 
               <div className="space-y-4">
-                {pillars.map((pillar) => {
+                {pillars.map((pillar, index) => {
                   const Icon = pillar.icon;
                   return (
-                    <div
+                    <motion.div
                       key={pillar.title}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
                       className="p-5 rounded-xl bg-[#FBF9F5] border border-[#2F3E36]/10 shadow-sm flex items-start gap-4 hover:border-[#C86452]/40 transition-colors"
                     >
                       <div className="p-2.5 rounded-lg bg-[#F4EAE1] text-[#C86452] shrink-0">
@@ -73,7 +85,7 @@ export default function About() {
                           {pillar.description}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
@@ -81,7 +93,13 @@ export default function About() {
           </div>
 
           {/* Right Column: Image & Decorative Frame */}
-          <div className="lg:col-span-5 relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 relative"
+          >
             <div className="sticky top-28 space-y-6">
               
               {/* Image Box */}
@@ -123,10 +141,10 @@ export default function About() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

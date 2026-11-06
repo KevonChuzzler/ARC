@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Globe, Share2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -28,7 +29,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-[#FBF9F5] border-t border-[#2F3E36]/10">
+    <motion.section 
+      id="contact" 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="py-20 lg:py-28 bg-[#FBF9F5] border-t border-[#2F3E36]/10"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -48,7 +56,13 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Contact Details & Google Maps Embed Placeholder */}
-          <div className="lg:col-span-5 space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-5 space-y-8"
+          >
             
             {/* Contact Details Card */}
             <div className="p-8 rounded-2xl bg-[#F4EAE1]/80 border border-[#2F3E36]/12 space-y-6">
@@ -166,10 +180,16 @@ export default function Contact() {
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Functional Contact Form */}
-          <div className="lg:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-7"
+          >
             <div className="p-8 lg:p-10 rounded-2xl bg-white border border-[#2F3E36]/12 shadow-sm space-y-6">
               
               <div>
@@ -313,10 +333,10 @@ export default function Contact() {
               )}
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
