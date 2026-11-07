@@ -1,112 +1,74 @@
-# African Restoration Centre (ARC) Website Implementation Plan
+# African Restorative Centre (ARC) Decluttering & Refinement Plan (Revised)
 
-A professional, minimalistic, and modern single-page website for the **African Restoration Centre (ARC)** focused on reconnecting communities with African heritage, cultural development, and educational programs.
+This plan details the structural and visual refinements to declutter the ARC single-page website, replace AI-generated images with clean placeholders, streamline pre-headings into unboxed subheadings, add interactive modals for programme details, introduce expand/collapse toggles for leadership biographies, **remove all agency references (Upside & KS Digital)**, and **remove all icons except in the Contact Us section**.
 
 ---
 
 ## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> The following user preferences were confirmed during initial planning:
-> - **Programmes & Services Interaction**: Simple static cards with smooth scrolling to the contact section.
-> - **Contact & Get Involved Section**: Detailed contact information paired with an interactive, always-visible WhatsApp widget at the bottom right.
-> - **Visual & Photography Style**: Warm, earthy African heritage photography strictly matching the ARC brand color swatches.
-
-- **Confirmed Palette**: Burnt Terracotta (`#C86452`), Ochre Gold (`#F3A83B`), Forest Charcoal (`#2F3E36`), Soft Warm Linen (`#F4EAE1`), and Pure White (`#FFFFFF`).
-- **Confirmed Typography**: Elegant display serif (`Cormorant Garamond`) paired with modern clean sans-serif (`Plus Jakarta Sans`).
-
----
-
-## 1. Overview & Core Concept
-
-The **African Restoration Centre (ARC)** website serves as an official digital home to present ARC's mission—*"People • Roots • Restoration"*. It presents ARC's history, core pillars, key programmes (Learning Sessions, Marriage Preparation, Online Activities), leadership team, and contact channels.
-
-### Key Values & Goals:
-- **Heritage & Community First**: Honor African culture, education, and relational restoration.
-- **Minimalist & Accessible**: Clear visual hierarchy, spacious layout, zero clutter, zero AI cliché copy.
-- **Direct Engagement**: Clear contact details, inquiry form, and persistent WhatsApp quick-connect option.
+> The following revisions were explicitly requested:
+> - **Agency References**: Completely remove any mention of "Upside", "Upside Digital Marketing & Branding", "KS Digital", and "KS Digital Solutionz" from all site copy, footers, and metadata.
+> - **Icon Discipline**: Remove ALL icons from Navbar, Hero, About, Programmes, Other Services, Leadership, and Footer. Keep icons **strictly** in the Contact Us section (and WhatsApp button).
+> - **Programme Details**: Click/tap on any programme card opens an **Interactive Modal Popup** displaying complete topic lists and details.
+> - **Leadership Biographies**: Profiles show the **1st paragraph with a "Read Full Biography" toggle button** to keep the page clean and uncluttered. Both Co-Directors receive equal visual prominence.
+> - **Image Placeholders**: All AI images are replaced with **clean neutral beige containers** (`bg-[#F4EAE1]`) with centered text reading `"Image goes here"`.
+> - **Pre-headings & Subheadings**: Remove all pill frames, icon badges, and border boxes attached to pre-headings, rendering them as clean text subheadings.
+> - **Programme Titles Only**: Remove all mechanical numbers (`FEATURED 1`, `Programme 04`) and list programmes purely by title.
 
 ---
 
-## 2. User Experience & Visual Design
+## 1. Overview & Key Changes
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           STICKY HEADER                                 │
-│  [Logo + African Restoration Centre] ── [About • Programmes • Leadership • Contact] ── [CTA]  │
-└─────────────────────────────────────────────────────────────────────────┘
-                                   │
-┌──────────────────────────────────┴──────────────────────────────────────┐
-│  SECTION 1: HERO (Split Text & Heritage Image + Brand Badge)            │
-│  "Reconnecting Communities with African Heritage and Learning"          │
-└──────────────────────────────────┬──────────────────────────────────────┘
-                                   │
-┌──────────────────────────────────┴──────────────────────────────────────┐
-│  SECTION 2: ABOUT ARC (Mission, History & 3 Core Pillars Grid)          │
-│  "People • Roots • Restoration"                                         │
-└──────────────────────────────────┬──────────────────────────────────────┘
-                                   │
-┌──────────────────────────────────┴──────────────────────────────────────┐
-│  SECTION 3: PROGRAMMES & SERVICES (3 Equal-Sized Grid Cards)            │
-│  [ Learning Sessions ]    [ Marriage Preparation ]    [ Online Activities ]│
-└──────────────────────────────────┬──────────────────────────────────────┘
-                                   │
-┌──────────────────────────────────┴──────────────────────────────────────┐
-│  SECTION 4: LEADERSHIP (3 Profile Headshot Cards)                       │
-│  [ Founder / Director ]      [ Cultural Educator ]     [ Programme Lead ] │
-└──────────────────────────────────┬──────────────────────────────────────┘
-                                   │
-┌──────────────────────────────────┴──────────────────────────────────────┐
-│  SECTION 5: CONTACT & GET INVOLVED (Split Info & Map / Form)             │
-│  Contact Details • Hours • Social Links • Map │ Interactive Form        │
-└─────────────────────────────────────────────────────────────────────────┘
-                                   │
-               [ FLOATING WHATSAPP BUTTON (Always Visible) ]
-```
+1. **Agency Removal**:
+   - Strip all credits or references to "Upside Digital Marketing & Branding", "Upside", and "KS Digital Solutionz" from `Footer.tsx`, `Contact.tsx`, `index.html`, and any setup notes.
 
-### Aesthetic Direction & Anti-Slop Discipline
-- **Zero-Pill Metadata**: Clean unboxed inline typography with `·` dividers.
-- **Top Bar Contract**: Exactly 3 zones (Brand wordmark with logo, 4 concise nav links, 1 action button "Get in Touch").
-- **No Cliché Copy**: Direct, human, authentic phrasing.
-- **Color Discipline (60-30-10 Rule)**:
-  - **60% Canvas**: Crisp white and warm soft linen (`#F4EAE1`).
-  - **30% Structure**: Forest Charcoal (`#2F3E36`) text, subtle hairline dividers, and muted containers.
-  - **10% Accent**: Terracotta Red (`#C86452`) primary buttons and Ochre Gold (`#F3A83B`) highlights.
+2. **Strict Icon Governance (Contact Only)**:
+   - Remove icon imports (`Sparkles`, `Compass`, `BookOpen`, `ArrowUpRight`, `ArrowRight`, `Users`, `Trees`, `RefreshCw`, `HeartHandshake`, `PlusCircle`, `ArrowUp`, etc.) from Navbar, Hero, About, Programmes, Other Services, Leadership, and Footer.
+   - Retain icons strictly in `Contact.tsx` (`Phone`, `Mail`, `MapPin`, `MessageCircle`, `Send`, `Globe`, `Share2`, `CheckCircle`) and the floating `WhatsAppWidget.tsx`.
+
+3. **Remove AI-Generated Images**:
+   - Remove image imports (`/src/assets/images/...`).
+   - Implement clean aspect-ratio containers (`bg-[#F4EAE1] border border-[#2F3E36]/15`) with centered text reading `"Image goes here"`.
+
+4. **Clean Subheadings**:
+   - Strip pill containers, background badges, and icon wrappers from pre-headings.
+   - Render pre-headings as clean, unboxed subheadings (`text-xs font-semibold uppercase tracking-widest text-[#C86452]`).
+
+5. **Programmes Section Interactive Modal**:
+   - Remove mechanical numbering (`FEATURED 1`, `01`, `Programme 04`).
+   - Render cards showing title and 1-2 line summary.
+   - Tapping/clicking a programme card opens a clean Modal Dialog displaying full topics, complete descriptions, and an enquiry button.
+
+6. **Leadership Profile Expand/Collapse**:
+   - Display both Co-Directors (*Norman Mongalo Raphahlela* & *Reverend Maphampha Rudolph Hlaka*) with equal visual rank.
+   - Show initial summary and 1st paragraph of biography, followed by a "Read Full Biography" toggle button that expands the full multi-paragraph bio in-place.
 
 ---
 
-## 3. Key Product Decisions & Trade-Offs
-
-1. **Sticky Top Bar with Smooth Scrolling**:
-   - *Decision*: Native CSS smooth scrolling (`scroll-behavior: smooth`) anchored to `#about`, `#programmes`, `#leadership`, and `#contact`.
-   - *Why*: Delivers an immediate, lightweight user experience without heavy routing.
-2. **Persistent WhatsApp Floating Widget**:
-   - *Decision*: Fixed button at bottom-right of viewport with WhatsApp brand green / charcoal styling and quick tooltip preview.
-   - *Why*: Facilitates direct mobile-friendly messaging for African community members.
-3. **High-Res Earthy Photography Assets**:
-   - *Decision*: Utilize generated high-res visual assets matching the exact color tone of the Acacia tree and warm sun logo.
-   - *Why*: Eliminates broken image links and maintains visual harmony.
-
----
-
-## 4. Technical Architecture & Component Strategy
+## 2. Technical Component Architecture & Plan
 
 ```
 src/
 ├── components/
-│   ├── Navbar.tsx            # Sticky Top Bar (Logo, Nav Links, Primary CTA)
-│   ├── Hero.tsx              # Split text/image hero with ARC logo & CTA
-│   ├── About.tsx             # Two-column introduction & 3 Core Pillars
-│   ├── Programmes.tsx        # 3 Grid cards for Learning, Marriage & Online Activities
-│   ├── Leadership.tsx        # Team headshot profiles and bios
-│   ├── Contact.tsx           # Split section with Form, Info & Google Maps Embed
-│   ├── WhatsAppWidget.tsx    # Fixed persistent quick-chat launcher
-│   └── Footer.tsx            # Minimalist footer with copyright & social links
-├── App.tsx                   # Main layout container & section orchestration
-└── index.css                 # Tailwind CSS directives & color custom variables
+│   ├── Navbar.tsx            # Clean text links (no icons)
+│   ├── Hero.tsx              # Unboxed subheading, headline, text buttons, "Image goes here" box (no icons)
+│   ├── About.tsx             # Who We Are, Vision, Mission, Objectives, Values (text only, no icons)
+│   ├── Programmes.tsx        # Title-only cards (no icons, no numbers), "Image goes here" + Modal trigger
+│   ├── OtherServices.tsx     # Gatherings, Coaching & Counselling (text only, no icons)
+│   ├── Leadership.tsx        # Equal Co-Directors with 1st paragraph + Read Full Biography toggle (no icons)
+│   ├── Contact.tsx           # Contact details with icons (Phone, Mail, MapPin, MessageCircle, Send)
+│   ├── ProgrammeModal.tsx    # Modal dialog popup for detailed programme topic viewing
+│   └── WhatsAppWidget.tsx    # Floating WhatsApp logo button
+└── App.tsx                   # Section orchestration & modal state management
 ```
 
-### Key Interactive Features:
-- **Form Submission**: Fully functional interactive contact form with field validation and immediate success state.
-- **Program Cards Hover Effects**: Subtle elevation lift and terracotta accent line on hover.
-- **Responsive Mobile Navigation**: Clean slide-down mobile menu with smooth anchor locking.
+---
+
+## 3. Step-by-Step Implementation Strategy
+
+1. **`ProgrammeModal.tsx`**: Create a clean modal dialog component (text-focused, no decorative icons) with backdrop blur, full topic list display, and enquiry action button.
+2. **`Programmes.tsx`**: List programmes by title without numbers, replace hero images with `"Image goes here"` placeholders, remove decorative icons, and trigger `ProgrammeModal` on click.
+3. **`Leadership.tsx`**: Remove avatar icons and agency notes. Display Co-Directors with 1st paragraph and interactive `isExpanded` state toggle to read full bio.
+4. **`Hero.tsx` & `About.tsx` & `OtherServices.tsx`**: Remove all icons, pill badges, and agency credits. Convert pre-headings into clean text subheadings. Replace AI images with `"Image goes here"` containers.
+5. **`Contact.tsx` & `Footer.tsx`**: Remove all mentions of Upside and KS Digital. Keep functional icons in `Contact.tsx`. Remove decorative icons from `Footer.tsx`.

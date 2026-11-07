@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,10 +20,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'About ARC', href: '#about' },
-    { name: 'Programmes & Services', href: '#programmes' },
+    { name: 'About the Centre', href: '#about' },
+    { name: 'Programmes', href: '#programmes' },
+    { name: 'Other Services', href: '#services' },
     { name: 'Leadership', href: '#leadership' },
-    { name: 'Contact ARC', href: '#contact' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -41,9 +42,9 @@ export default function Navbar() {
           {/* Zone 1: Brand Wordmark & Logo */}
           <a href="#" className="flex items-center gap-3 shrink-0 group">
             <img 
-              src="/assets/aistudio/WhatsApp_Image_2026-11-04_at_09.37.16_9133e983.jpeg" 
+              src="/assets/aistudio/ONLY_ARC_LOGO_WITH_NO_SLOGAN_PNG_a5baf575.png" 
               alt="African Restorative Centre Logo" 
-              className="w-11 h-11 rounded-full object-cover border border-[#2F3E36]/15 group-hover:scale-105 transition-transform"
+              className="w-12 h-12 object-contain group-hover:scale-105 transition-transform"
             />
             <div className="flex flex-col">
               <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#2F3E36] whitespace-nowrap">
@@ -56,7 +57,7 @@ export default function Navbar() {
           </a>
 
           {/* Zone 2: Navigation Links */}
-          <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[#2F3E36]/80">
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#2F3E36]/80">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -69,18 +70,17 @@ export default function Navbar() {
           </nav>
 
           {/* Zone 3: Primary Action CTA */}
-          <div className="hidden md:flex items-center gap-4 shrink-0">
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             <a
               href="#contact"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#C86452] hover:bg-[#b05342] rounded-md transition-all shadow-sm hover:shadow-md shrink-0 active:scale-95"
             >
               Contact ARC
-              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
+          <div className="flex lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-[#2F3E36] hover:text-[#C86452] focus:outline-none"
@@ -94,7 +94,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#F4EAE1] border-b border-[#2F3E36]/10 px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2">
+        <div className="lg:hidden bg-[#F4EAE1] border-b border-[#2F3E36]/10 px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2">
           {navLinks.map((link) => (
             <a
               key={link.name}

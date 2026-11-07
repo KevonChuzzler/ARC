@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Programmes from './components/Programmes';
+import OtherServices from './components/OtherServices';
 import Leadership from './components/Leadership';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -16,19 +17,22 @@ export default function App() {
 
       {/* Main Single Page Content */}
       <main className="flex-1">
-        {/* Section 1: Hero */}
+        {/* Section 01: Hero / Home */}
         <Hero />
 
-        {/* Section 2: About ARC */}
+        {/* Section 02: About the Centre */}
         <About />
 
-        {/* Section 3: Programmes & Services */}
+        {/* Section 03: Programmes */}
         <Programmes />
 
-        {/* Section 4: Leadership */}
+        {/* Section 04: Other Services */}
+        <OtherServices />
+
+        {/* Section 05: Leadership */}
         <Leadership />
 
-        {/* Section 5: Contact & Get Involved */}
+        {/* Section 06: Contact & Get Involved */}
         <Contact />
       </main>
 

@@ -1,34 +1,33 @@
 import React from 'react';
-import { Target, Compass, Sparkles, CheckCircle2, Award, Users, HeartHandshake, BookOpen, Lightbulb, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function About() {
   const objectives = [
     {
-      num: '01',
-      text: 'To support the healing of minds from intergenerational trauma systems associated with colonialism, capitalism, discrimination and evangelisation.',
+      num: '1',
+      text: 'Heal people’s minds from intergenerational trauma systems brought by colonialism, capitalism, discrimination and evangelisation.',
     },
     {
-      num: '02',
-      text: "To examine Africa's indigenous sciences of self-knowledge in response to challenges of identity and self-understanding.",
+      num: '2',
+      text: 'Methodologically examine Africa’s ageless, timeless sciences of self-knowledge to address the crisis of identity and self-knowledge dented by intergenerational trauma systems.',
     },
     {
-      num: '03',
-      text: 'To create space for the emergence of a free, self-knowing, authentic, prosperous and self-actualised uMuntu/Motho.',
+      num: '3',
+      text: 'Create space and time for the re-emergence of a free uMuntu/Motho who is self-knowing, authentic, prosperous and self-actualised.',
     },
     {
-      num: '04',
-      text: 'To facilitate the practical application of African indigenous knowledge systems towards the development of flourishing societies.',
+      num: '4',
+      text: 'Facilitate the practical application of Africa’s ageless, timeless indigenous knowledge systems for the development of flourishing societies.',
     },
   ];
 
   const values = [
-    { name: 'Excellence', desc: 'Highest standard in cultural research, teaching, and community stewardship.' },
-    { name: 'Inclusivity', desc: 'Welcoming young people, adults, and families across all cultural walks.' },
-    { name: 'Innovation', desc: 'Bridging timeless ancient wisdom with contemporary psychological understanding.' },
-    { name: 'Integrity', desc: 'Authentic preservation, ethical engagement, and deep respect for traditions.' },
-    { name: 'Community', desc: 'Collective participation, shared learning circles, and mutual empowerment.' },
-    { name: 'Lifelong Learning', desc: 'Continuous inquiry, mind liberation, and holistic personal evolution.' },
+    'Excellence',
+    'Inclusivity',
+    'Innovation',
+    'Integrity',
+    'Community',
+    'Lifelong Learning',
   ];
 
   return (
@@ -43,29 +42,26 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#C86452]">
-            About African Restorative Centre
-          </span>
+        <div className="max-w-3xl space-y-2">
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-[#C86452]">
+            About the Centre
+          </h3>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#2F3E36] text-balance">
-            Who We Are
+            Grounded in African Indigenous Knowledge
           </h2>
         </div>
 
         {/* Two Column Grid: Who We Are & Vision/Mission */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Who We Are Narrative + Vision + Mission */}
+          {/* Left Column: Who We Are + Vision + Mission */}
           <div className="lg:col-span-7 space-y-8">
-            <div className="prose prose-lg text-[#2F3E36]/85 space-y-5 font-normal leading-relaxed">
-              <p className="text-lg sm:text-xl font-medium text-[#2F3E36] leading-relaxed">
-                African Restorative Centre (ARC) is an organisation committed to the exploration, preservation and practical application of Africa's ageless and timeless indigenous knowledge systems.
-              </p>
-              <p>
-                ARC seeks to address challenges of identity and self-knowledge by creating opportunities for people to examine the mind, understand themselves and reconnect with African knowledge and perspectives.
-              </p>
-              <p>
-                The Centre aims to support the emergence of a self-knowing, authentic, prosperous and self-actualised uMuntu/Motho, while contributing to the development of flourishing individuals and communities.
+            <div className="space-y-4">
+              <h3 className="font-serif text-2xl font-bold text-[#2F3E36]">
+                Who We Are
+              </h3>
+              <p className="text-base sm:text-lg text-[#2F3E36]/85 font-normal leading-relaxed">
+                The African Restorative Centre is a learning and development initiative grounded in African indigenous knowledge and self-knowledge. The Centre seeks to create opportunities for individuals and communities to explore African knowledge systems, deepen their understanding of self and contribute to more flourishing ways of living.
               </p>
             </div>
 
@@ -74,22 +70,20 @@ export default function About() {
               
               {/* Vision */}
               <div className="p-6 rounded-2xl bg-[#FBF9F5] border border-[#2F3E36]/10 shadow-sm space-y-2">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C86452]">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Our Vision</span>
-                </div>
-                <h3 className="font-serif text-2xl font-bold text-[#2F3E36]">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-[#C86452]">
+                  Vision
+                </h4>
+                <p className="font-serif text-2xl font-bold text-[#2F3E36]">
                   Ancient Future Reclaimed.
-                </h3>
+                </p>
               </div>
 
               {/* Mission */}
               <div className="p-6 rounded-2xl bg-[#FBF9F5] border border-[#2F3E36]/10 shadow-sm space-y-2">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C86452]">
-                  <Compass className="w-4 h-4" />
-                  <span>Our Mission</span>
-                </div>
-                <p className="text-sm text-[#2F3E36]/85 leading-relaxed font-normal">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-[#C86452]">
+                  Mission
+                </h4>
+                <p className="text-xs sm:text-sm text-[#2F3E36]/85 leading-relaxed font-normal">
                   To provide accessible, high-quality learning experiences grounded in African indigenous knowledge and self-knowledge, supporting personal restoration, critical thinking, creativity and the development of flourishing individuals and communities.
                 </p>
               </div>
@@ -97,7 +91,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Cultural Image & Identity Card */}
+          {/* Right Column: Image Placeholder */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -107,42 +101,14 @@ export default function About() {
           >
             <div className="sticky top-28 space-y-6">
               
-              {/* Image Box */}
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#2F3E36]/15 bg-white">
-                <img
-                  src="/src/assets/images/about_heritage_1793799018066.jpg"
-                  alt="African cultural heritage library and learning center"
-                  className="w-full h-[380px] lg:h-[440px] object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2F3E36]/85 via-transparent to-transparent opacity-85" />
-
-                <div className="absolute bottom-0 inset-x-0 p-6 text-white space-y-1">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-[#F3A83B]">
-                    uMuntu / Motho
-                  </span>
-                  <p className="font-serif text-xl font-bold">
-                    "Supporting the emergence of a self-knowing, authentic, prosperous and self-actualised person."
-                  </p>
-                </div>
-              </div>
-
-              {/* Tagline Card */}
-              <div className="p-6 rounded-xl bg-[#2F3E36] text-white shadow-md flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-[#F3A83B] font-semibold uppercase tracking-wider">
-                    Official Positioning
-                  </p>
-                  <p className="font-serif text-lg font-bold mt-0.5">
-                    Ancient Future Reclaimed
-                  </p>
-                </div>
-                <img
-                  src="/assets/aistudio/WhatsApp_Image_2026-11-04_at_09.37.17_4d6df73c.jpeg"
-                  alt="ARC Logo Emblem"
-                  className="w-12 h-12 rounded-full border border-white/20 object-cover"
-                />
+              {/* Image Placeholder Container */}
+              <div className="w-full h-[360px] lg:h-[400px] rounded-2xl bg-[#F4EAE1] border border-[#2F3E36]/15 flex flex-col items-center justify-center gap-3 p-8 text-center shadow-sm">
+                <span className="text-sm font-semibold uppercase tracking-widest text-[#2F3E36]/70">
+                  Image goes here
+                </span>
+                <span className="text-xs text-[#2F3E36]/50">
+                  African Restorative Centre — Learning & Development
+                </span>
               </div>
 
             </div>
@@ -150,18 +116,15 @@ export default function About() {
 
         </div>
 
-        {/* Section: Our Purpose (Guided by 4 Central Objectives) */}
+        {/* Section: Purpose and Objectives */}
         <div className="pt-8 border-t border-[#2F3E36]/15 space-y-8">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#C86452]">
+          <div className="max-w-2xl space-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-[#C86452]">
               Strategic Foundations
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#2F3E36]">
-              Our Purpose: Four Central Objectives
             </h3>
-            <p className="text-sm text-[#2F3E36]/75">
-              ARC's work is guided by four foundational objectives dedicated to healing, self-discovery, and flourishing societies:
-            </p>
+            <h4 className="text-2xl sm:text-3xl font-serif font-bold text-[#2F3E36]">
+              Purpose and Objectives
+            </h4>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -175,7 +138,7 @@ export default function About() {
                 className="p-6 rounded-2xl bg-white border border-[#2F3E36]/10 shadow-sm hover:border-[#C86452]/40 transition-colors flex items-start gap-4"
               >
                 <span className="font-serif text-2xl font-bold text-[#C86452] tabular-nums shrink-0">
-                  {obj.num}
+                  {obj.num}.
                 </span>
                 <p className="text-sm sm:text-base text-[#2F3E36]/85 font-normal leading-relaxed">
                   {obj.text}
@@ -185,39 +148,25 @@ export default function About() {
           </div>
         </div>
 
-        {/* Section: Our Values */}
-        <div className="pt-8 border-t border-[#2F3E36]/15 space-y-8">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#C86452]">
+        {/* Section: Values */}
+        <div className="pt-8 border-t border-[#2F3E36]/15 space-y-6">
+          <div className="max-w-2xl space-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-[#C86452]">
               Guiding Principles
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#2F3E36]">
-              Our Values
             </h3>
+            <h4 className="text-2xl sm:text-3xl font-serif font-bold text-[#2F3E36]">
+              Values
+            </h4>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="p-6 rounded-2xl bg-white border border-[#2F3E36]/10 shadow-xs flex flex-wrap items-center justify-around gap-6 text-center">
             {values.map((v, idx) => (
-              <motion.div
-                key={v.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="p-5 rounded-xl bg-white border border-[#2F3E36]/10 text-center shadow-xs flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-8 h-8 rounded-full bg-[#F4EAE1] text-[#C86452] flex items-center justify-center mx-auto mb-3 font-serif font-bold text-xs">
-                    {idx + 1}
-                  </div>
-                  <h4 className="font-serif text-base font-bold text-[#2F3E36] mb-1">
-                    {v.name}
-                  </h4>
-                  <p className="text-xs text-[#2F3E36]/70 leading-snug">
-                    {v.desc}
-                  </p>
-                </div>
-              </motion.div>
+              <div key={v} className="flex items-center gap-3">
+                {idx > 0 && <span className="text-[#C86452] font-serif text-lg">•</span>}
+                <span className="font-serif text-lg sm:text-xl font-bold text-[#2F3E36]">
+                  {v}
+                </span>
+              </div>
             ))}
           </div>
         </div>

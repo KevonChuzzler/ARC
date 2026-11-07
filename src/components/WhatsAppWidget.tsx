@@ -23,7 +23,7 @@ export default function WhatsAppWidget() {
           
           <div className="flex items-start gap-3">
             <img
-              src="/assets/aistudio/WhatsApp_Image_2026-11-04_at_09.37.16_9133e983.jpeg"
+              src="/assets/aistudio/ARC_LOGO_WITH_NO_SLOGAN_PNG_33d0f5a3.png"
               alt="ARC WhatsApp Avatar"
               className="w-10 h-10 rounded-full object-cover border border-[#2F3E36]/15 shrink-0"
             />
