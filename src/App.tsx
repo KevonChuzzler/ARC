@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,8 +8,12 @@ import Leadership from './components/Leadership';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import PrivacyPolicyModal from './components/PrivacyPolicyModal';
+import CookieConsentBanner from './components/CookieConsentBanner';
 
 export default function App() {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF9F5] text-[#2F3E36] antialiased selection:bg-[#C86452] selection:text-white">
       {/* Sticky Navigation */}
@@ -37,10 +41,20 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenPrivacyPolicy={() => setIsPrivacyOpen(true)} />
 
       {/* Persistent WhatsApp Floating Widget */}
       <WhatsAppWidget />
+
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner onOpenPrivacyPolicy={() => setIsPrivacyOpen(true)} />
+
+      {/* Cookie & Privacy Policy Modal */}
+      <PrivacyPolicyModal
+        isOpen={isPrivacyOpen}
+        onClose={() => setIsPrivacyOpen(false)}
+      />
     </div>
   );
 }
+

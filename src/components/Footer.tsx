@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function Footer() {
+interface FooterProps {
+  onOpenPrivacyPolicy?: () => void;
+}
+
+export default function Footer({ onOpenPrivacyPolicy }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -80,6 +84,17 @@ export default function Footer() {
                   Contact ARC
                 </a>
               </li>
+              {onOpenPrivacyPolicy && (
+                <li>
+                  <button
+                    onClick={onOpenPrivacyPolicy}
+                    type="button"
+                    className="hover:text-[#F3A83B] transition-colors text-left cursor-pointer"
+                  >
+                    Privacy & Cookies
+                  </button>
+                </li>
+              )}
             </ul>
 
             <div className="pt-4 border-t border-white/10 text-xs text-white/60 space-y-1">
@@ -101,10 +116,21 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Tier: Copyright */}
+        {/* Bottom Tier: Copyright & Legal */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
           <p>© {currentYear} African Restorative Centre (ARC). All rights reserved.</p>
-          <p>AfricanRestorative.co.za</p>
+          <div className="flex items-center gap-6">
+            {onOpenPrivacyPolicy && (
+              <button
+                onClick={onOpenPrivacyPolicy}
+                type="button"
+                className="hover:text-[#F3A83B] transition-colors underline underline-offset-4 cursor-pointer"
+              >
+                Cookie & Privacy Policy
+              </button>
+            )}
+            <p>AfricanRestorative.co.za</p>
+          </div>
         </div>
 
       </div>
