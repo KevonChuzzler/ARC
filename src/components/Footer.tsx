@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Phone, Mail, Globe } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,22 +16,41 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <img
                 src="/assets/aistudio/WhatsApp_Image_2026-11-04_at_09.37.16_9133e983.jpeg"
-                alt="ARC Logo"
+                alt="African Restorative Centre Logo"
                 className="w-12 h-12 rounded-full border border-white/20 object-cover"
               />
               <div>
                 <h3 className="font-serif text-2xl font-bold tracking-tight text-white">
-                  African Restoration Centre
+                  African Restorative Centre
                 </h3>
                 <p className="text-xs tracking-widest uppercase text-[#F3A83B] font-semibold">
-                  People · Roots · Restoration
+                  Ancient Future Reclaimed
                 </p>
               </div>
             </div>
 
-            <p className="text-sm text-white/70 max-w-sm leading-relaxed font-normal">
-              Dedicated to cultural preservation, holistic learning, and relational restoration for families and communities across Africa and the global diaspora.
+            <p className="text-sm text-white/75 max-w-sm leading-relaxed font-normal">
+              Exploring and applying Africa's indigenous knowledge systems to support self-knowledge, personal growth and community development.
             </p>
+
+            <div className="space-y-1.5 text-xs text-white/80 pt-1">
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#F3A83B]" />
+                <a href="tel:0785269500" className="hover:text-[#F3A83B] transition-colors tabular-nums">
+                  078 526 9500 (Tel & WhatsApp Business)
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-[#F3A83B]" />
+                <a href="mailto:info@AfricanRestorative.co.za" className="hover:text-[#F3A83B] transition-colors">
+                  info@AfricanRestorative.co.za
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-3.5 h-3.5 text-[#F3A83B]" />
+                <span>AfricanRestorative.co.za</span>
+              </div>
+            </div>
           </div>
 
           {/* Quick Navigation Links */}
@@ -41,26 +60,31 @@ export default function Footer() {
             </h4>
             <ul className="grid grid-cols-2 gap-2 text-sm text-white/80 font-medium">
               <li>
-                <a href="#about" className="hover:text-[#C86452] transition-colors">
+                <a href="#about" className="hover:text-[#F3A83B] transition-colors">
                   About ARC
                 </a>
               </li>
               <li>
-                <a href="#programmes" className="hover:text-[#C86452] transition-colors">
+                <a href="#programmes" className="hover:text-[#F3A83B] transition-colors">
                   Programmes
                 </a>
               </li>
               <li>
-                <a href="#leadership" className="hover:text-[#C86452] transition-colors">
+                <a href="#leadership" className="hover:text-[#F3A83B] transition-colors">
                   Leadership
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#C86452] transition-colors">
-                  Get in Touch
+                <a href="#contact" className="hover:text-[#F3A83B] transition-colors">
+                  Contact ARC
                 </a>
               </li>
             </ul>
+
+            <div className="pt-4 border-t border-white/10 text-xs text-white/60 space-y-1">
+              <p className="font-semibold text-white/80">Core Pillars & Objectives:</p>
+              <p>Mind Liberation · Indigenous Sciences · Self-Actualisation · Flourishing Societies</p>
+            </div>
           </div>
 
           {/* Back to Top */}
@@ -77,15 +101,13 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Tier: Copyright & Unboxed Metadata */}
+        {/* Bottom Tier: Copyright & Agency Credits */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
-          <p>© {currentYear} African Restoration Centre. All rights reserved.</p>
+          <p>© {currentYear} African Restorative Centre (ARC). All rights reserved.</p>
           <div className="flex items-center gap-3">
-            <span>Heritage Education</span>
+            <span>Prepared by: Upside Digital Marketing & Branding</span>
             <span aria-hidden="true">·</span>
-            <span>Family Restoration</span>
-            <span aria-hidden="true">·</span>
-            <span>Community Capacity</span>
+            <span>Small Business Digital Growth Partner</span>
           </div>
         </div>
 

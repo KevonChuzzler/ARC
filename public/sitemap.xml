@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Main Root Homepage -->
+  <url>
+    <loc>https://AfricanRestorative.co.za/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About ARC -->
+  <url>
+    <loc>https://AfricanRestorative.co.za/#about</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Programmes & Services -->
+  <url>
+    <loc>https://AfricanRestorative.co.za/#programmes</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Leadership & Team -->
+  <url>
+    <loc>https://AfricanRestorative.co.za/#leadership</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact & Get Involved -->
+  <url>
+    <loc>https://AfricanRestorative.co.za/#contact</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

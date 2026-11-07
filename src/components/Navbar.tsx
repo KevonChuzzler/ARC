@@ -21,9 +21,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'About ARC', href: '#about' },
-    { name: 'Programmes', href: '#programmes' },
+    { name: 'Programmes & Services', href: '#programmes' },
     { name: 'Leadership', href: '#leadership' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact ARC', href: '#contact' },
   ];
 
   return (
@@ -38,19 +38,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-8">
           
-          {/* Zone 1: Single Brand Wordmark & Logo */}
+          {/* Zone 1: Brand Wordmark & Logo */}
           <a href="#" className="flex items-center gap-3 shrink-0 group">
             <img 
               src="/assets/aistudio/WhatsApp_Image_2026-11-04_at_09.37.16_9133e983.jpeg" 
-              alt="ARC Logo" 
+              alt="African Restorative Centre Logo" 
               className="w-11 h-11 rounded-full object-cover border border-[#2F3E36]/15 group-hover:scale-105 transition-transform"
             />
             <div className="flex flex-col">
               <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#2F3E36] whitespace-nowrap">
-                African Restoration Centre
+                African Restorative Centre
               </span>
               <span className="text-[10px] tracking-widest uppercase text-[#C86452] font-semibold -mt-1 hidden sm:block">
-                People • Roots • Restoration
+                Ancient Future Reclaimed
               </span>
             </div>
           </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
               href="#contact"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#C86452] hover:bg-[#b05342] rounded-md transition-all shadow-sm hover:shadow-md shrink-0 active:scale-95"
             >
-              Get in Touch
+              Contact ARC
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -110,7 +110,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className="block text-center w-full px-4 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-[#C86452] rounded-md shadow-sm mt-4"
           >
-            Get in Touch
+            Contact ARC
           </a>
         </div>
       )}
