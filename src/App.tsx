@@ -8,11 +8,15 @@ import Leadership from './components/Leadership';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import BackToTop from './components/BackToTop';
 import PrivacyPolicyModal from './components/PrivacyPolicyModal';
 import CookieConsentBanner from './components/CookieConsentBanner';
 
 export default function App() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [isProgrammeOpen, setIsProgrammeOpen] = useState(false);
+
+  const isAnyModalOpen = isPrivacyOpen || isProgrammeOpen;
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF9F5] text-[#2F3E36] antialiased selection:bg-[#C86452] selection:text-white">
@@ -28,7 +32,7 @@ export default function App() {
         <About />
 
         {/* Section 03: Programmes */}
-        <Programmes />
+        <Programmes onModalStateChange={setIsProgrammeOpen} />
 
         {/* Section 04: Other Services */}
         <OtherServices />
@@ -43,8 +47,11 @@ export default function App() {
       {/* Footer */}
       <Footer onOpenPrivacyPolicy={() => setIsPrivacyOpen(true)} />
 
-      {/* Persistent WhatsApp Floating Widget */}
-      <WhatsAppWidget />
+      {/* Floating Back to Top Button */}
+      <BackToTop isModalOpen={isAnyModalOpen} />
+
+      {/* Persistent WhatsApp Floating Widget (elevated and positioned above modal when showing) */}
+      <WhatsAppWidget isModalOpen={isAnyModalOpen} />
 
       {/* Cookie Consent Banner */}
       <CookieConsentBanner onOpenPrivacyPolicy={() => setIsPrivacyOpen(true)} />
@@ -57,4 +64,5 @@ export default function App() {
     </div>
   );
 }
+
 

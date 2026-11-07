@@ -118,10 +118,13 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyMod
           </div>
 
           {/* Footer */}
-          <div className="p-6 border-t border-[#2F3E36]/10 bg-[#FBF9F5] flex justify-end">
+          <div className="p-5 sm:p-6 border-t border-[#2F3E36]/10 bg-[#FBF9F5] flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span className="text-xs text-[#2F3E36]/65">
+              African Restorative Centre · POPIA Compliant
+            </span>
             <button
               onClick={onClose}
-              className="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#C86452] hover:bg-[#b05342] rounded-lg transition-colors cursor-pointer"
+              className="w-full sm:w-auto px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#C86452] hover:bg-[#b05342] rounded-lg transition-colors cursor-pointer text-center"
             >
               Close
             </button>

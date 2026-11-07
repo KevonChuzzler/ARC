@@ -2,8 +2,22 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ProgrammeModal, { ProgrammeData } from './ProgrammeModal';
 
-export default function Programmes() {
+interface ProgrammesProps {
+  onModalStateChange?: (isOpen: boolean) => void;
+}
+
+export default function Programmes({ onModalStateChange }: ProgrammesProps = {}) {
   const [selectedProgramme, setSelectedProgramme] = useState<ProgrammeData | null>(null);
+
+  const handleOpenProgramme = (prog: ProgrammeData) => {
+    setSelectedProgramme(prog);
+    onModalStateChange?.(true);
+  };
+
+  const handleCloseProgramme = () => {
+    setSelectedProgramme(null);
+    onModalStateChange?.(false);
+  };
 
   const featuredProgrammes: ProgrammeData[] = [
     {
@@ -128,7 +142,7 @@ export default function Programmes() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                onClick={() => setSelectedProgramme(prog)}
+                onClick={() => handleOpenProgramme(prog)}
                 className="group flex flex-col justify-between rounded-2xl bg-white border border-[#2F3E36]/12 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer p-8 space-y-6"
               >
                 {/* Title & Short Description */}
@@ -174,7 +188,7 @@ export default function Programmes() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                onClick={() => setSelectedProgramme(addProg)}
+                onClick={() => handleOpenProgramme(addProg)}
                 className="p-6 rounded-2xl bg-white border border-[#2F3E36]/10 shadow-sm flex flex-col justify-between space-y-4 hover:border-[#C86452]/40 transition-colors cursor-pointer group"
               >
                 <div className="space-y-2">
@@ -199,7 +213,7 @@ export default function Programmes() {
       {/* Programme Modal Dialog */}
       <ProgrammeModal
         programme={selectedProgramme}
-        onClose={() => setSelectedProgramme(null)}
+        onClose={handleCloseProgramme}
       />
     </motion.section>
   );

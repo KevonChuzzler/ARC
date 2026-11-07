@@ -1,21 +1,31 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 
-export default function WhatsAppWidget() {
+interface WhatsAppWidgetProps {
+  isModalOpen?: boolean;
+}
+
+export default function WhatsAppWidget({ isModalOpen = false }: WhatsAppWidgetProps) {
   const [tooltipVisible, setTooltipVisible] = useState(true);
 
   // Official public WhatsApp link
   const whatsappUrl = "https://wa.me/27785269500?text=Hello%20African%20Restorative%20Centre,%20I%20would%20like%20to%20enquire%20about%20your%20programmes%20and%20gatherings.";
 
   return (
-    <aside aria-label="WhatsApp Quick Connect" className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 group">
-      
-      {/* Tooltip Card */}
-      {tooltipVisible && (
+    <aside
+      aria-label="WhatsApp Quick Connect"
+      className={`fixed right-6 transition-all duration-300 flex flex-col items-end gap-3 group ${
+        isModalOpen
+          ? 'bottom-24 z-[70] translate-y-0'
+          : 'bottom-6 z-40'
+      }`}
+    >
+      {/* Tooltip Card - only shown when modal is not active */}
+      {!isModalOpen && tooltipVisible && (
         <div className="max-w-xs p-4 rounded-2xl bg-white border border-[#2F3E36]/15 shadow-xl relative animate-in fade-in slide-in-from-bottom-2 duration-300">
           <button
             onClick={() => setTooltipVisible(false)}
-            className="absolute top-2 right-2 text-[#2F3E36]/40 hover:text-[#2F3E36] p-1 rounded-full transition-colors"
+            className="absolute top-2 right-2 text-[#2F3E36]/40 hover:text-[#2F3E36] p-1 rounded-full transition-colors cursor-pointer"
             aria-label="Close notification"
           >
             <X className="w-3.5 h-3.5" />
@@ -46,11 +56,10 @@ export default function WhatsAppWidget() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with ARC on WhatsApp"
-        className="p-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
+        className="p-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center cursor-pointer"
       >
         <MessageCircle className="w-7 h-7 fill-current shrink-0" />
       </a>
-
     </aside>
   );
 }
