@@ -172,27 +172,18 @@ export default function Contact() {
                 </span>
                 <span className="text-white/70">Krugersdorp, 1740</span>
               </div>
-              <div className="relative h-64 bg-[#F4EAE1] flex flex-col items-center justify-center p-6 text-center space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#C86452] text-white flex items-center justify-center shadow-md animate-bounce">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div className="space-y-1">
-                  <p className="font-serif text-lg font-bold text-[#2F3E36]">
-                    African Restorative Centre
-                  </p>
-                  <p className="text-xs text-[#2F3E36]/80 font-medium max-w-xs">
-                    398 Tobias Street, Heritage Manor Estate, Krugersdorp, 1740
-                  </p>
-                </div>
-                <a
-                  href="https://maps.google.com/?q=398+Tobias+Street+Heritage+Manor+Estate+Krugersdorp+1740"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-[#2F3E36]/20 rounded-md text-xs font-semibold text-[#2F3E36] hover:bg-[#F4EAE1] transition-colors"
-                >
-                  <Globe className="w-3.5 h-3.5 text-[#C86452]" />
-                  Open in Google Maps
-                </a>
+              <div className="relative w-full h-80 bg-[#F4EAE1]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3480.636113425104!2d27.751721325288727!3d-26.0897046271475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s398%20Tobias%20Street.%20Heritage%20manor%20estate.%20Krugersdorp%20%201740.!5e1!3m2!1sen!2sza!4v1794078214272!5m2!1sen!2sza"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="ARC Location Map - 398 Tobias Street, Heritage Manor Estate, Krugersdorp"
+                  className="w-full h-full"
+                />
               </div>
             </div>
 
