@@ -9,7 +9,7 @@ export default function Hero() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="relative overflow-hidden bg-[#163A30] text-white pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-[#2F3E36]/20"
     >
-      {/* Mobile-Only Background: Generated Tree / Gathering Illustration */}
+      {/* Mobile-Only Background: Generated Tree / Gathering Illustration (High Visibility) */}
       <div 
         aria-hidden="true" 
         className="absolute inset-0 z-0 lg:hidden overflow-hidden pointer-events-none select-none"
@@ -17,10 +17,10 @@ export default function Hero() {
         <img
           src="/assets/aistudio/hero_illustration_clean.png"
           alt=""
-          className="w-full h-full object-cover object-bottom opacity-30 scale-105"
+          className="w-full h-full object-cover object-center opacity-85 scale-100"
         />
-        {/* Protective gradient overlay to ensure text is 100% legible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#163A30] via-[#163A30]/80 to-[#163A30]/90" />
+        {/* Balanced contrast scrim so artwork is vividly visible while text is crystal clear */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#163A30]/80 via-[#163A30]/30 to-[#163A30]/85" />
       </div>
 
       {/* Subtle ambient light glow for desktop */}
@@ -50,18 +50,18 @@ export default function Hero() {
 
             {/* Italic Golden Tagline */}
             <div className="space-y-2">
-              <span className="font-serif italic text-base sm:text-lg text-[#E6CA7E] tracking-wide block">
+              <span className="font-serif italic text-base sm:text-lg text-[#E6CA7E] tracking-wide block drop-shadow-sm">
                 Ancient Future Reclaimed.
               </span>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.12] tracking-tight text-balance">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.12] tracking-tight text-balance drop-shadow-md">
                 Reclaiming African Knowledge. Restoring the Self. Building Flourishing Communities.
               </h1>
             </div>
 
             {/* Paragraph Subtitle */}
-            <p className="text-base sm:text-lg text-white/85 font-normal leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-xl drop-shadow-sm">
               The African Restorative Centre explores and applies Africa&apos;s indigenous knowledge systems to support self-knowledge, personal growth and community development.
             </p>
 
