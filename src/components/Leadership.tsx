@@ -46,7 +46,7 @@ export default function Leadership() {
       firstParagraph:
         'Reverend Maphampha Rudolph Hlaka is an educator, ordained minister, marriage officer and marriage coach with more than 24 years of experience in ministry, pastoral leadership and supporting individuals and families.',
       remainingParagraphs: [
-        'He holds a Bachelor of Theology degree and a Higher Education Diploma from the University of Limpopo. He currently works as a teacher at Kagiso Second School, bringing his experience in education and personal development into his professional and community work.',
+        'He holds a Bachelor of Theology degree and a Higher Education Diploma from the University of Limpopo. He currently works as a teacher at Kagiso Secondary School, bringing his experience in education and personal development into his professional and community work.',
         'Before his current teaching role, Reverend Hlaka served the Department of Correctional Services for 15 years as a Spiritual Care Coordinator, providing spiritual guidance and support within the correctional environment.',
         'His ministry and leadership journey spans more than two decades. He has spent 14 years in church leadership, serving in pastoral roles, leading congregations and contributing to church administration. His leadership experience also includes serving as Chairperson of the Circuit.',
         'As a marriage officer and marriage coach, he brings additional experience in marriage preparation, relationship guidance and supporting individuals and couples.',
@@ -104,8 +104,8 @@ export default function Leadership() {
                         className="w-full h-full object-cover object-[center_15%]"
                       />
                     ) : (
-                      <span className="text-xs font-semibold uppercase tracking-widest text-[#2F3E36]/60">
-                        Image goes here
+                      <span className="text-sm font-serif font-bold text-[#2F3E36]/40 uppercase tracking-widest">
+                        {leader.name.charAt(0)}
                       </span>
                     )}
                   </div>

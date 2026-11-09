@@ -187,24 +187,42 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Social Media Links */}
+            {/* Official Social Media Links */}
             <div className="p-6 rounded-2xl bg-white border border-[#2F3E36]/12 shadow-sm space-y-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#2F3E36]/70 flex items-center gap-1.5">
                 <Share2 className="w-3.5 h-3.5 text-[#C86452]" />
-                Follow ARC
+                Follow ARC on Social Media
               </span>
-              <p className="text-xs text-[#2F3E36]/70 leading-relaxed">
-                Links to ARC's approved social media platforms will be included here upon confirmation.
+              <p className="text-xs text-[#2F3E36]/75 leading-relaxed">
+                Connect with the African Restorative Centre on our official social media channels:
               </p>
-              <div className="flex flex-wrap items-center gap-2 pt-1">
-                {['Facebook', 'YouTube', 'Instagram', 'LinkedIn'].map((network) => (
-                  <span
-                    key={network}
-                    className="px-3 py-1.5 rounded-md bg-[#F4EAE1] border border-[#2F3E36]/10 text-xs font-semibold text-[#2F3E36]/70"
-                  >
-                    {network}
-                  </span>
-                ))}
+              <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61596284974987"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#F4EAE1] hover:bg-[#C86452] hover:text-white border border-[#2F3E36]/10 text-xs font-semibold text-[#2F3E36] transition-colors"
+                >
+                  <span>Facebook</span>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/africanrestorative/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#F4EAE1] hover:bg-[#C86452] hover:text-white border border-[#2F3E36]/10 text-xs font-semibold text-[#2F3E36] transition-colors"
+                >
+                  <span>Instagram</span>
+                </a>
+
+                <a
+                  href="https://www.tiktok.com/@africanrestorative?lang=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#F4EAE1] hover:bg-[#C86452] hover:text-white border border-[#2F3E36]/10 text-xs font-semibold text-[#2F3E36] transition-colors"
+                >
+                  <span>TikTok</span>
+                </a>
               </div>
             </div>
 

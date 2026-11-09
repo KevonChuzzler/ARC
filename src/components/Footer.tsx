@@ -103,15 +103,47 @@ export default function Footer({ onOpenPrivacyPolicy }: FooterProps) {
             </div>
           </div>
 
-          {/* Back to Top Button (Text only) */}
-          <div className="md:col-span-3 flex md:justify-end">
+          {/* Back to Top & Social Media Links */}
+          <div className="md:col-span-3 flex flex-col md:items-end gap-6">
             <a
               href="#"
               aria-label="Back to top"
-              className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-white/10 hover:bg-[#C86452] text-xs font-semibold uppercase tracking-wider text-white transition-all border border-white/10"
+              className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-white/10 hover:bg-[#C86452] text-xs font-semibold uppercase tracking-wider text-white transition-all border border-white/10 w-fit"
             >
               Back to Top
             </a>
+
+            <div className="space-y-2 md:text-right">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#F3A83B] block">
+                Follow ARC
+              </span>
+              <div className="flex flex-wrap md:justify-end gap-2 text-xs">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61596284974987"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-md bg-white/10 hover:bg-[#C86452] text-white transition-colors"
+                >
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/africanrestorative/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-md bg-white/10 hover:bg-[#C86452] text-white transition-colors"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.tiktok.com/@africanrestorative?lang=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-md bg-white/10 hover:bg-[#C86452] text-white transition-colors"
+                >
+                  TikTok
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
