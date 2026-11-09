@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Zone 1: Brand Wordmark & Logo */}
           <a href="#" className="flex items-center gap-3 shrink-0 group">
             <img 
-              src="/assets/aistudio/ONLY_ARC_LOGO_WITH_NO_SLOGAN_PNG_a5baf575.png" 
+              src="/assets/aistudio/arc_logo_emblem_only.png" 
               alt="African Restorative Centre Logo" 
               className="w-12 h-12 object-contain group-hover:scale-105 transition-transform"
             />

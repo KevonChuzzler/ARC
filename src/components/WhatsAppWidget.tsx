@@ -33,9 +33,9 @@ export default function WhatsAppWidget({ isModalOpen = false }: WhatsAppWidgetPr
           
           <div className="flex items-start gap-3">
             <img
-              src="/assets/aistudio/ARC_LOGO_WITH_NO_SLOGAN_PNG_33d0f5a3.png"
+              src="/assets/aistudio/arc_logo_emblem_only.png"
               alt="ARC WhatsApp Avatar"
-              className="w-10 h-10 rounded-full object-cover border border-[#2F3E36]/15 shrink-0"
+              className="w-10 h-10 rounded-full object-cover border border-[#2F3E36]/15 shrink-0 bg-[#F4EAE1] p-0.5"
             />
             <div className="space-y-1">
               <div className="flex items-center gap-1.5">
