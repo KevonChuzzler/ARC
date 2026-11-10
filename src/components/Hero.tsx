@@ -40,7 +40,7 @@ export default function Hero() {
             className="lg:col-span-7 space-y-6 sm:space-y-7"
           >
             {/* Circular ARC Logo Badge with cropped emblem (no text) */}
-            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#FBF9F5] p-3 flex items-center justify-center shadow-xl ring-2 ring-white/10 shrink-0">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#FBF9F5] p-3 flex items-center justify-center shadow-xl ring-2 ring-white/10 shrink-0 translate-x-[30%]">
               <img
                 src="/assets/aistudio/arc_logo_emblem_only.png"
                 alt="African Restorative Centre Emblem"
