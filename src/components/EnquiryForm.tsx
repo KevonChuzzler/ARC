@@ -104,22 +104,47 @@ export default function EnquiryForm({ prefill, onOpenPrivacyPolicy }: EnquiryFor
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: trimmedName,
-          email: trimmedEmail,
-          phone: phone.trim(),
-          interests,
-          programme: interests.includes('Learning Programmes') ? programme : '',
-          message: trimmedMessage,
-          consent,
-          website,
-        }),
+      const apiBase = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '');
+      const requestBody = JSON.stringify({
+        fullName: trimmedName,
+        email: trimmedEmail,
+        phone: phone.trim(),
+        interests,
+        programme: interests.includes('Learning Programmes') ? programme : '',
+        message: trimmedMessage,
+        consent,
+        website,
       });
+
+      const postContact = async (endpoint: string) =>
+        fetch(`${apiBase}${endpoint}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: requestBody,
+        });
+
+      let response = await postContact('/api/contact');
+      let contentType = response.headers.get('content-type') || '';
+
+      // On cPanel / static SPA hosting, /api/contact may rewrite to index.html (text/html).
+      // Fall back to /api/contact.php when no Node/Vercel handler intercepted /api/contact.
+      if (!apiBase && (!contentType.includes('application/json') || response.status === 404)) {
+        const phpResponse = await postContact('/api/contact.php');
+        const phpContentType = phpResponse.headers.get('content-type') || '';
+        if (phpContentType.includes('application/json')) {
+          response = phpResponse;
+          contentType = phpContentType;
+        }
+      }
+
+      if (!contentType.includes('application/json')) {
+        setErrorMsg(
+          'The enquiry endpoint is not active on this host yet (the server returned an HTML page instead of JSON). Please ensure the backend /api/contact route or cPanel PHP handler is deployed, or email info@africanrestorative.co.za directly.'
+        );
+        return;
+      }
 
       const payload = (await response.json().catch(() => ({}))) as {
         success?: boolean;
