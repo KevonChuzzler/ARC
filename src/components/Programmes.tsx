@@ -4,9 +4,13 @@ import ProgrammeModal, { ProgrammeData } from './ProgrammeModal';
 
 interface ProgrammesProps {
   onModalStateChange?: (isOpen: boolean) => void;
+  onEnquireProgramme?: (programmeTitle: string) => void;
 }
 
-export default function Programmes({ onModalStateChange }: ProgrammesProps = {}) {
+export default function Programmes({
+  onModalStateChange,
+  onEnquireProgramme,
+}: ProgrammesProps = {}) {
   const [selectedProgramme, setSelectedProgramme] = useState<ProgrammeData | null>(null);
 
   const handleOpenProgramme = (prog: ProgrammeData) => {
@@ -214,6 +218,7 @@ export default function Programmes({ onModalStateChange }: ProgrammesProps = {})
       <ProgrammeModal
         programme={selectedProgramme}
         onClose={handleCloseProgramme}
+        onEnquire={onEnquireProgramme}
       />
     </motion.section>
   );

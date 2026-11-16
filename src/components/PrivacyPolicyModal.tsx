@@ -66,11 +66,11 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyMod
                 2. Information We Collect
               </h4>
               <p>
-                When you interact with our website (AfricanRestorative.co.za) or contact us via telephone, WhatsApp, or email, we may collect the following information:
+                When you interact with our website (AfricanRestorative.co.za) or contact us via our website enquiry form, telephone, WhatsApp, or email, we may collect the following information:
               </p>
               <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm">
                 <li>Personal identification details (e.g. name, email address, phone number).</li>
-                <li>Programme inquiries and communication history.</li>
+                <li>Selected areas of interest, programme enquiries, and communication history.</li>
                 <li>Technical data such as browser type, operating system, and anonymous usage patterns.</li>
               </ul>
             </div>

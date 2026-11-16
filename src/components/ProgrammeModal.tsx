@@ -11,9 +11,14 @@ export interface ProgrammeData {
 interface ProgrammeModalProps {
   programme: ProgrammeData | null;
   onClose: () => void;
+  onEnquire?: (programmeTitle: string) => void;
 }
 
-export default function ProgrammeModal({ programme, onClose }: ProgrammeModalProps) {
+export default function ProgrammeModal({
+  programme,
+  onClose,
+  onEnquire,
+}: ProgrammeModalProps) {
   if (!programme) return null;
 
   return (
@@ -103,8 +108,11 @@ export default function ProgrammeModal({ programme, onClose }: ProgrammeModalPro
                 Close
               </button>
               <a
-                href="#contact"
-                onClick={onClose}
+                href="#contact-form"
+                onClick={() => {
+                  onEnquire?.(programme.title);
+                  onClose();
+                }}
                 className="flex-1 sm:flex-none px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#C86452] hover:bg-[#b05342] rounded-lg transition-colors text-center"
               >
                 Get in Touch

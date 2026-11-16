@@ -1,7 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function OtherServices() {
+import type { EnquiryInterest } from '../lib/enquiry';
+
+interface OtherServicesProps {
+  onSelectInterest?: (interest: EnquiryInterest) => void;
+}
+
+export default function OtherServices({ onSelectInterest }: OtherServicesProps = {}) {
   return (
     <motion.section 
       id="services" 
@@ -47,7 +53,8 @@ export default function OtherServices() {
 
           <div className="lg:col-span-4 flex lg:justify-end">
             <a
-              href="#contact"
+              href="#contact-form"
+              onClick={() => onSelectInterest?.('African Knowledge Gatherings')}
               className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#C86452] hover:bg-[#b05342] rounded-xl transition-all shadow-md shrink-0 w-full sm:w-auto text-center"
             >
               Enquire About Gatherings
@@ -98,7 +105,8 @@ export default function OtherServices() {
 
               <div className="pt-4 border-t border-[#2F3E36]/10">
                 <a
-                  href="#contact"
+                  href="#contact-form"
+                  onClick={() => onSelectInterest?.('Marriage Preparation')}
                   className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-[#C86452] hover:text-[#b05342] transition-colors"
                 >
                   Enquire for Marriage Preparation
@@ -128,7 +136,8 @@ export default function OtherServices() {
 
               <div className="pt-4 border-t border-[#2F3E36]/10">
                 <a
-                  href="#contact"
+                  href="#contact-form"
+                  onClick={() => onSelectInterest?.('Coaching & Counselling')}
                   className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-[#C86452] hover:text-[#b05342] transition-colors"
                 >
                   Contact Centre to Discuss Support
